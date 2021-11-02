@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 
 const Login = ({ authService }) => {
   const history = useHistory();
+
   const goToMaker = (userId) => {
     history.push({
       pathname: '/maker',
