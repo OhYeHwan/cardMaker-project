@@ -3,7 +3,7 @@ import styles from './app.module.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Maker from './components/maker/maker';
 
-function App({ FileInput, authService }) {
+function App({ FileInput, authService, cardRepository }) {
   return (
     // 단순히 스타일링만 위한 것이라면 : div
     // 의미있는 그룹이라면 : section, hearder ...
@@ -14,7 +14,11 @@ function App({ FileInput, authService }) {
             <Login authService={authService} />
           </Route>
           <Route path="/maker">
-            <Maker FileInput={FileInput} authService={authService} />
+            <Maker
+              FileInput={FileInput}
+              authService={authService}
+              cardRepository={cardRepository}
+            />
           </Route>
         </Switch>
       </BrowserRouter>
