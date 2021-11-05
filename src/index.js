@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import ReactDOM from 'react-dom';
 import './index.module.css';
 import App from './app';
@@ -13,10 +13,9 @@ const imageUploader = new ImageUploader();
 const cardRepository = new CardRepository();
 
 // 확장 가능한 컴포넌트
-const FileInput = (props) => (
+const FileInput = memo((props) => (
   <ImageFileInput {...props} imageUploader={imageUploader} />
-);
-
+));
 // 컴포넌트 props인 경우 대문자로 시작
 ReactDOM.render(
   <React.StrictMode>
